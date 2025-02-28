@@ -3,10 +3,7 @@ import psycopg2
 import os
 from datetime import datetime
 
-app = Flask(__name__, template_folder="templates")
-
-# Debugging step: Print DATABASE_URL to check if Render is recognizing it
-print("DATABASE_URL:", os.getenv("DATABASE_URL"))  # <-- This will print in Render logs
+app = Flask(__name__, template_folder="templates")  # ✅ FIXED TEMPLATE PATH
 
 # Get database URL from environment variable
 DATABASE_URL = os.getenv("DATABASE_URL")
@@ -89,4 +86,5 @@ def summary():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5001, debug=True)
+
 
