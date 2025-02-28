@@ -5,6 +5,9 @@ from datetime import datetime
 
 app = Flask(__name__)
 
+# Debugging step: Print DATABASE_URL to check if Render is recognizing it
+print("DATABASE_URL:", os.getenv("DATABASE_URL"))  # <-- This will print in Render logs
+
 # Get database URL from environment variable
 DATABASE_URL = os.getenv("DATABASE_URL")
 
@@ -86,5 +89,4 @@ def summary():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5001, debug=True)
-
 
