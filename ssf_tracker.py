@@ -3,7 +3,7 @@ import psycopg2
 import os
 from datetime import datetime
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder="templates")
 
 # Debugging step: Print DATABASE_URL to check if Render is recognizing it
 print("DATABASE_URL:", os.getenv("DATABASE_URL"))  # <-- This will print in Render logs
