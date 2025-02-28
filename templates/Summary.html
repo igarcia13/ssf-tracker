@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Summary</title>
+</head>
+<body>
+    <h1>Activity Summary</h1>
+
+    <!-- SSF Name & Month Selection Form -->
+    <form method="POST">
+        <label for="ssf_name">Your Name:</label>
+        <input type="text" id="ssf_name" name="ssf_name" value="{{ ssf_name }}" required>
+
+        <label for="selected_month">Select Month:</label>
+        <input type="month" id="selected_month" name="selected_month" value="{{ selected_month }}" required>
+
+        <button type="submit">Filter</button>
+    </form>
+
+    <h2>Summary of Activities for {{ ssf_name }}</h2>
+    <table border="1">
+        <tr>
+            <th>Activity</th>
+            <th>Count</th>
+        </tr>
+        {% for row in activity_summary %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Students by Activity</h2>
+    <table border="1">
+        <tr>
+            <th>Activity</th>
+            <th>Students</th>
+        </tr>
+        {% for row in student_details %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] if row[1] else 'No Entries' }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="/">Back to Home</a>
+</body>
+</html>
+
+
+

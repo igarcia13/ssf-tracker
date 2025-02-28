@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume & Cover Letter Generator</title>
+</head>
+<body>
+    <h1>Generate Your Resume</h1>
+    <form action="/generate_resume" method="post">
+        Name: <input type="text" name="name"><br>
+        Job Title: <input type="text" name="job_title"><br>
+        Experience: <textarea name="experience"></textarea><br>
+        Skills: <textarea name="skills"></textarea><br>
+        Education: <textarea name="education"></textarea><br>
+        <button type="submit">Generate Resume</button>
+    </form>
+    
+    <h1>Generate Your Cover Letter</h1>
+    <form action="/generate_cover_letter" method="post">
+        Name: <input type="text" name="name"><br>
+        Job Title: <input type="text" name="job_title"><br>
+        Company: <input type="text" name="company"><br>
+        Experience: <textarea name="experience"></textarea><br>
+        Skills: <textarea name="skills"></textarea><br>
+        <button type="submit">Generate Cover Letter</button>
+    </form>
+</body>
+</html>
