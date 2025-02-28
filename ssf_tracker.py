@@ -85,6 +85,7 @@ def summary():
     return render_template("summary.html", activity_summary=activity_summary, student_details=student_details, selected_month=selected_month, ssf_name=ssf_name)
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5001, debug=True)
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 10000)), debug=True)
+
 
 
